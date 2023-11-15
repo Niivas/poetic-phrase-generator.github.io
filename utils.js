@@ -77,12 +77,7 @@ async function getImage(query) {
 
 async function getQuote(favActivity, favPlace, temperature) {
   let quotePrompt = `Create a poetic phrase about ${favActivity} and ${favPlace} in the insightful, witty and satirical style of Oscar Wilde. Omit Oscar Wilde's name.`
-
-  if (quotePrompt === quotePromptFromLocalStorage) {
-    return quoteFromLocalStorage
-  }
-
-  localStorage.setItem("quotePrompt", quotePrompt)
+  
   let body = {
     model: "text-davinci-003",
     prompt: quotePrompt,
